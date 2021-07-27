@@ -42,6 +42,7 @@ call plug#end()
 syntax on
 let mapleader="\<Space>"
 colorscheme onedark " Theme
+hi Normal guibg=NONE ctermbg=NONE
 set re=1 " This uses a different regex engine more suited for ruby
 set clipboard=unnamed "Use system clipboard
 set backspace=2 " make backspace work like most other programs

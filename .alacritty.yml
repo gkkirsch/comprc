@@ -242,7 +242,6 @@ selection:
   save_to_clipboard: false
 
 dynamic_title: true
-
 cursor:
   # Cursor style
   #
