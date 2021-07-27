@@ -3,18 +3,6 @@ set encoding=UTF-8
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree' " Directory structure
-let g:NERDTreeMapJumpPrevSibling="" " To allow tmux/vim navigation
-let g:NERDTreeMapJumpNextSibling="" " To allow tmux/vim navigation
-let NERDTreeShowHidden=1 " Display ignored files in NERDTree
-autocmd bufenter * if (winnr("$") == 1
-      \ && exists("b:NERDTree")
-      \ && b:NERDTree.isTabTree())
-      \ | q | endif " Automatically close vim if NERDTree is only buffer left
-autocmd VimEnter * NERDTree " Automatically start NERDTree on open
-let g:NERDTreeWinSize=40
-map <leader>n :NERDTreeToggle<CR>
-
 Plug 'elixir-editors/vim-elixir' " Elixir support for vim
 Plug 'slashmili/alchemist.vim' " Elixir support for vim
 Plug 'scrooloose/nerdcommenter' " Comment support
@@ -26,7 +14,6 @@ Plug 'leafgarland/typescript-vim' " Typescript support
 Plug 'tpope/vim-fugitive' " Vim git integration
 Plug 'airblade/vim-gitgutter' " Vim gutter integration
 
-Plug 'rbgrouleff/bclose.vim'
 Plug 'tpope/vim-vinegar' " Vinegar
 Plug 'itchyny/lightline.vim' " File info at bottom of vim
 Plug 'rafi/awesome-vim-colorschemes' " Vim color schemes
@@ -40,7 +27,12 @@ Plug 'tpope/vim-abolish' " String case coercion
 Plug 'chiedo/vim-case-convert'
 Plug 'kana/vim-textobj-user' " Define custom text objects
 Plug 'andyl/vim-textobj-elixir' " Elixir text objects
-Plug 'ryanoasis/vim-devicons' " dev icons for vim
+
+Plug 'scrooloose/nerdtree' " Directory structure
+let g:NERDTreeMapJumpPrevSibling="" " To allow tmux/vim navigation
+let g:NERDTreeMapJumpNextSibling="" " To allow tmux/vim navigation
+let NERDTreeShowHidden=1 " Display ignored files in NERDTree
+let g:NERDTreeWinSize=40
 
 call plug#end()
 
@@ -63,8 +55,10 @@ set ignorecase " ignore case in search
 set smartcase " honor case if capital present
 set wrap
 nnoremap <leader><s-w> :set wrap!<cr>
-nnoremap <leader>sv source $MYVIMR<cr>
-autocmd bufwritepost .vimrc source $MYVIMRC
+nnoremap <leader>sv :source ~/.vimrc<cr>
+nnoremap <leader>ec :tabf $HOME/comprc<cr>
+nnoremap <leader>n :NERDTreeToggle<CR>
+map <leader>/ <plug>NERDCommenterToggle
 "set nofoldenable " Enables code folding
 "set foldmethod=syntax
 "set foldlevel=1
@@ -112,9 +106,7 @@ let g:esearch = {'use': 'visual'} " Esearch with visual text
 let g:ag_apply_qmappings=1
 let g:ag_mapping_message=1
 " Open file finder
-noremap <leader>p :Files<CR>
-" Open file finder full screen
-noremap <leader><s-p> :Files!<CR>
+nnoremap <leader>p :Files<CR>
 " Ag search full-screen
 noremap <leader>f :Ag<CR>
 " Ag search
@@ -137,7 +129,11 @@ command! -bang -nargs=* Files
 """""""""""""""""
 let g:lightline = {
       \ 'component_function': {
-      \   'filename': 'LightLineFilename'
+      \   'filename': 'LightLineFilename',
+      \   'fileencoding': 'hi',
+      \	  'fileformat': 'hi',
+      \   'filetype': 'hi',
+      \   'percent': 'hi',
       \ }
       \ }
 function! LightLineFilename()
