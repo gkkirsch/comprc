@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/core"
 
 # Applications
@@ -15,6 +16,7 @@ cask "discord" # Voice and Chat app
 cask "krisp" # Removes noise from mic
 cask "notion" # Note taking app
 cask "rectangle" # Windows Snap (Needs setup after installation)
+cask "font-hack-nerd-font" # For icons in nerd tree
 
 # CLI Applications
 brew "asdf" # echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc

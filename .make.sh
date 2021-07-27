@@ -17,13 +17,14 @@ echo "Installing Xcode Developer Tools"
 xcode-select --install
 
 echo "Install brew"
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "Installing OS Dependencies"
 brew bundle
 
 # oh my zsh
 echo "Installing Oh My Zsh"
+rm -rf ~/.oh-my-zsh
 sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Change permissions on zsh files

@@ -1,4 +1,5 @@
 filetype off
+set encoding=UTF-8
 
 call plug#begin('~/.vim/plugged')
 
@@ -25,7 +26,6 @@ Plug 'leafgarland/typescript-vim' " Typescript support
 Plug 'tpope/vim-fugitive' " Vim git integration
 Plug 'airblade/vim-gitgutter' " Vim gutter integration
 
-Plug 'ryanoasis/vim-devicons' " dev icons for vim
 Plug 'rbgrouleff/bclose.vim'
 Plug 'tpope/vim-vinegar' " Vinegar
 Plug 'itchyny/lightline.vim' " File info at bottom of vim
@@ -40,6 +40,7 @@ Plug 'tpope/vim-abolish' " String case coercion
 Plug 'chiedo/vim-case-convert'
 Plug 'kana/vim-textobj-user' " Define custom text objects
 Plug 'andyl/vim-textobj-elixir' " Elixir text objects
+Plug 'ryanoasis/vim-devicons' " dev icons for vim
 
 call plug#end()
 
@@ -47,7 +48,7 @@ call plug#end()
 """" Core
 """"""""""""""""""
 syntax on
-let mapleader = "\<Space>"
+let mapleader="\<Space>"
 colorscheme onedark " Theme
 set re=1 " This uses a different regex engine more suited for ruby
 set clipboard=unnamed "Use system clipboard
@@ -62,6 +63,8 @@ set ignorecase " ignore case in search
 set smartcase " honor case if capital present
 set wrap
 nnoremap <leader><s-w> :set wrap!<cr>
+nnoremap <leader>sv source $MYVIMR<cr>
+autocmd bufwritepost .vimrc source $MYVIMRC
 "set nofoldenable " Enables code folding
 "set foldmethod=syntax
 "set foldlevel=1
@@ -216,9 +219,6 @@ function SurroundWords(front, back)
   endwhile
   execute command
 endfunction
-
-"vnoremap <Leader>r :'<,'>s/\%Vfoo\%V/bar/g<left><left><left><left><left><left>
-nnoremap <S-k> :s/ /\r/g<cr>
 
 
 """""""""""""""""""""""
