@@ -1,44 +1,29 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
-tap "homebrew/cask-fonts"
 tap "homebrew/core"
-tap "homebrew/services"
-brew "asciiquarium"
-brew "autoconf"
-brew "automake"
-brew "bc"
-brew "convox"
-brew "coreutils"
-brew "cowsay"
+
+# Applications
+cask "alacritty" # My GPU editor
+cask "docker" # Docker Desktop
+cask "postman" # HTTP client
+cask "spotify" # Music
+cask "visual-studio-code" # Just in case
+cask "postico" # Postgres client
+cask "slack" # Chat app
+cask "zoom" # Voice app
+cask "discord" # Voice and Chat app
+cask "krisp" # Removes noise from mic
+cask "notion" # Note taking app
+cask "rectangle" # Windows Snap (Needs setup after installation)
+
+# CLI Applications
+brew "asdf" # echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
+brew "git" # Version control
 brew "openssl"
-brew "erlang"
-brew "fortune"
-brew "git"
-brew "googler"
-brew "libksba"
-brew "gnupg"
-brew "libiconv"
-brew "libtool"
-brew "readline"
-brew "libxml2"
-brew "libxslt"
-brew "libyaml"
-brew "lynx"
-brew "macvim"
-brew "openssl@1.1"
-brew "pandoc"
-brew "pkg-config"
-brew "postgresql"
-brew "ranger"
-brew "shellcheck"
-brew "snappy"
+brew "macvim" # Full version of vim. See https://github.com/macvim-dev/macvim/blob/master/README_vim.md
+brew "postgresql" # CLI for postgres
 brew "the_silver_searcher"
-brew "tmux"
-brew "unixodbc"
-brew "watch"
-brew "yarn"
-brew "zsh"
-cask "alacritty"
-cask "docker"
-cask "font-hack-nerd-font"
-cask "graphiql"
+brew "tmux" # Terminal goodness
+brew "yarn" # NPM package manager
+brew "coreutils"
+

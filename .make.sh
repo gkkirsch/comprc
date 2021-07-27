@@ -10,30 +10,21 @@
 
 dir=~/comprc                                # dotfiles directory
 olddir=~/comprc_old                         # old dotfiles backup directory
-files="bashrc zshrc vimrc vim tmux.conf alacritty.yml"    # list of files/folders to symlink in homedir
+files="zshrc vimrc vim tmux.conf alacritty.yml"    # list of files/folders to symlink in homedir
 
 ##########
+echo "Installing Xcode Developer Tools"
+xcode-select --install
+
+echo "Install brew"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 echo "Installing OS Dependencies"
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  sudo apt-get install zsh
-  sudo apt-get install silversearcher-ag
-  # package to compare floating point numbers
-  sudo apt-get install bc
-  sudo apt-get install tmux
-  sudo apt-get install fortune
-  sudo apt-get install cowsay
-  sudo apt-get install vim
-  sudo apt-get install ranger
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  brew bundle
-fi
-echo "Finished Installing OS Dependencies"
+brew bundle
 
 # oh my zsh
 echo "Installing Oh My Zsh"
 sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-echo "Finished Installing Oh My Zsh"
 
 # Change permissions on zsh files
 sudo chown -R $(whoami):staff ~/.oh-my-zsh ~/.zsh*
@@ -42,6 +33,7 @@ sudo chown -R $(whoami):staff ~/.oh-my-zsh ~/.zsh*
 ## syntax highlighting
 #git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
+mkdir -p ~/dev
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir

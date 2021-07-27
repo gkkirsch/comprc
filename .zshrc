@@ -17,12 +17,9 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Plugins
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  colored-man-pages
-	#zsh-autosuggestions
-  #zsh-syntax-highlighting
-)
+plugins=(git colored-man-pages)
+
+ZSH_TMUX_AUTOSTART=true
 
 # History
 SAVEHIST=1000
@@ -59,7 +56,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_GIT_PROMPT_DIRTY="$my_orange*%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="$FG[075])%{$reset_color%}"
 
-
+source ~/.bashrc.d/asdf
 # GOOGLE
 # Chrome history search
 export FZF_DEFAULT_COMMAND='fd --type f'
@@ -79,19 +76,9 @@ ch() {
   fzf --ansi --multi | sed 's#.*\(https*://\)#\1#' | xargs open
 }
 
-# Google
-alias gg='googler'
-alias ggl='googler --lucky'
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 # Add npm to PATH for scripting. Make sure this is the last PATH variable change.
 #export PATH="$PATH:$HOME/.asdf/installs/nodejs/9.3.0/.npm/bin"
 # Add python pip packages to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/Library/Python/3.7/bin"
-
-# Java
-export ANDROID_HOME="/Users/tylerdoermann/Library/Android/sdk"
-export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
-export PATH="$PATH:$JAVA_HOME/bin"

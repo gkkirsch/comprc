@@ -1,51 +1,10 @@
-echo_intro(){
-  echo "██████╗  █████╗  ██████╗██╗  ██╗██████╗  ██████╗ ███████╗██████╗ "
-  echo "██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██╔══██╗██╔═══██╗██╔════╝██╔══██╗"
-  echo "██████╔╝███████║██║     █████╔╝ ██║  ██║██║   ██║█████╗  ██████╔╝"
-  echo "██╔══██╗██╔══██║██║     ██╔═██╗ ██║  ██║██║   ██║██╔══╝  ██╔══██╗"
-  echo "██████╔╝██║  ██║╚██████╗██║  ██╗██████╔╝╚██████╔╝███████╗██║  ██║"
-  echo "╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝"
-  echo "                                                                 "
-  fortune | cowsay
-}
-
 # Add Identity
-if [[ ! -f /tmp/.id_added ]];then
-  ssh-add -K ~/.ssh/id_rsa
-  touch /tmp/.id_added
-fi
+# if [[ ! -f /tmp/.id_added ]];then
+#  ssh-add -K ~/.ssh/id_rsa
+#  touch /tmp/.id_added
+# fi
 
-# clear
-alias c=clear
-
-# Comprc
-alias comprc='cd ~/comprc && vim'
-
-# TMUX
-alias e_tmux="vim $HOME/.tmux.conf"
-alias s_tmux="tmux source-file $HOME/.tmux.conf"
-alias ksesh_tmux="tmux kill-session -t"
-alias sesh_tmux="tmux list-sessions"
-alias ntmux="tmux new-session -s"
-alias asesh_tmux="tmux attach -t"
-
-# git
-gco(){
-  git checkout $1
-}
-gn(){
-  git checkout -b $1
-}
-gall(){
-  git add .
-  git commit -m "$1"
-  git push
-}
-gd(){
-  git branch -d $1
-}
-
-export GIT_MERGE_AUTOEDIT=no # don't open vim when pulling master
+# export GIT_MERGE_AUTOEDIT=no # don't open vim when pulling master
 
 gmm(){
   git checkout master
@@ -55,24 +14,7 @@ gmm(){
   git push --no-verify
 }
 
-# Rebease only YOUR commits onto master
-# git rebase --onto master reactions reaction-users
-
-alias gdbr="git branch | grep -v "master" | xargs git branch -d"
-alias gmm_all="git branch | grep -v "master" | xargs git checkout | gmm"
-
 alias uuid="uuidgen | tr \"[:upper:]\" \"[:lower:]\" | tr -d '[:space:]' | pbcopy && pbpaste"
-
-# directories
-alias ls='ls -GFh'
-
-#VIM
-export EDITOR="vim"
-alias e_vimrc="vim $HOME/.vimrc"
-
-#Docker
-alias dc="docker-compose"
-alias d="docker"
 
 # Enable iex history
 export ERL_AFLAGS="-kernel shell_history enabled"
