@@ -54,7 +54,7 @@ set noswapfile " Disable .swp files
 let &number=1 " Show current line number (using let syntax just because...)
 set ignorecase " ignore case in search
 set smartcase " honor case if capital present
-set wrap
+set nowrap
 nnoremap <leader><s-w> :set wrap!<cr>
 nnoremap <leader>sv :source ~/.vimrc<cr>
 nnoremap <leader>ec :tabf $HOME/comprc<cr>
@@ -191,8 +191,8 @@ function! s:elixir_transformation_bindings()
 endfunction
 
 " General
-vnoremap crs :CamelToSnakeSel!<CR>
-vnoremap crc :SnakeToCamelSel!<CR>
+"vnoremap crs :CamelToSnakeSel!<CR>
+"vnoremap crc :SnakeToCamelSel!<CR>
 
 nnoremap <Leader>sw :Sur / /<left><left>
 nnoremap <Leader>sl :SurL / /<left><left>
