@@ -27,9 +27,17 @@ source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 # Add npm to PATH for scripting. Make sure this is the last PATH variable change.
 #export PATH="$PATH:$HOME/.asdf/installs/nodejs/9.3.0/.npm/bin"
 # Add python pip packages to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/Library/Python/3.7/bin"
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
+
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
+export ASDF_DIR=~/.asdf
+export PATH=$ASDF_DIR/bin:$PATH

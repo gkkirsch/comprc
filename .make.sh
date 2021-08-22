@@ -28,7 +28,7 @@ rm -rf ~/.oh-my-zsh
 sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Change permissions on zsh files
-#sudo chown -R $(whoami):staff ~/.oh-my-zsh ~/.zsh*
+sudo chown -R $(whoami):staff ~/.oh-my-zsh ~/.zsh*
 
 # oh my zsh plugins
 ## syntax highlighting
@@ -61,6 +61,8 @@ echo "Finished installing Plug"
 # Change permissions on autload file
 echo "Changing vim autoload permissions"
 sudo chmod -R 755 ~/.vim/autoload
+sudo chown -R $(whoami):staff ~/.vim/autoload
+sudo chown -R $(whoami):staff ~/.vim/plugged
 echo "Finished changing vim autoload permissions"
 
 # Install the rest of the plugins

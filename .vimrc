@@ -2,7 +2,8 @@ filetype off
 set encoding=UTF-8
 
 call plug#begin('~/.vim/plugged')
-
+Plug 'jiangmiao/auto-pairs' " Auto pairs
+Plug 'tpope/vim-endwise' " Auto end things like def hi() do end
 Plug 'elixir-editors/vim-elixir' " Elixir support for vim
 Plug 'slashmili/alchemist.vim' " Elixir support for vim
 Plug 'scrooloose/nerdcommenter' " Comment support
@@ -13,7 +14,6 @@ Plug 'leafgarland/typescript-vim' " Typescript support
 
 Plug 'tpope/vim-fugitive' " Vim git integration
 Plug 'airblade/vim-gitgutter' " Vim gutter integration
-
 Plug 'tpope/vim-vinegar' " Vinegar
 Plug 'itchyny/lightline.vim' " File info at bottom of vim
 Plug 'rafi/awesome-vim-colorschemes' " Vim color schemes
@@ -60,7 +60,7 @@ nnoremap <leader>sv :source ~/.vimrc<cr>
 nnoremap <leader>ec :tabf $HOME/comprc<cr>
 nnoremap <leader>n :NERDTreeToggle<CR>
 map <leader>/ <plug>NERDCommenterToggle
-"set nofoldenable " Enables code folding
+set nofoldenable " Enables code folding
 "set foldmethod=syntax
 "set foldlevel=1
 
@@ -73,7 +73,6 @@ set splitbelow
 noremap <leader>\ :vsplit .<CR>
 noremap <leader>d :e .<CR>
 noremap <leader>- :split .<CR>
-noremap <leader>t :tabf .<CR>
 noremap <leader>\| :vsplit %:h/<CR>
 noremap <leader>_ :split %:h/<CR>
 noremap <leader><s-b> :tabnew <CR>
@@ -108,6 +107,7 @@ let g:ag_apply_qmappings=1
 let g:ag_mapping_message=1
 " Open file finder
 nnoremap <leader>p :Files<CR>
+nnoremap <leader>t :Files<CR>
 " Ag search full-screen
 noremap <leader>f :Ag<CR>
 " Ag search
@@ -129,6 +129,7 @@ command! -bang -nargs=* Files
 """ Lightline
 """""""""""""""""
 let g:lightline = {
+      \	'colorscheme': 'wombat',
       \ 'component_function': {
       \   'filename': 'LightLineFilename',
       \   'fileencoding': 'hi',
@@ -259,3 +260,4 @@ endfunction
 "
 " Run macro
 " @ [letter]
+"
