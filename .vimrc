@@ -1,7 +1,7 @@
 filetype off
 set encoding=UTF-8
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/autoload')
 Plug 'jiangmiao/auto-pairs' " Auto pairs
 Plug 'tpope/vim-endwise' " Auto end things like def hi() do end
 Plug 'elixir-editors/vim-elixir' " Elixir support for vim

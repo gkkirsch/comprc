@@ -13,6 +13,7 @@ env:
   TERM: xterm-256color
 
 window:
+  opacity: 1
   # Window dimensions (changes require restart)
   #
   # Specified in number of columns/lines, not pixels.
@@ -52,7 +53,7 @@ scrolling:
   # to allow mouse scrolling for applications like `man`.
   #
   # Specifying `0` will disable faux scrolling.
-  faux_multiplier: 100
+  faux_multiplier: 200
 
   # Scroll to the bottom when new text is written to the terminal.
   auto_scroll: true
@@ -86,19 +87,19 @@ tabspaces: 4
 font:
   # Normal (roman) font face
   normal:
-    family: Hack Nerd Font
+    family: Menlo
     # The `style` can be specified to pick a specific face.
     style: Regular
 
   # Bold font face
   bold:
-    family: Hack Nerd Font
+    family: Menlo
     # The `style` can be specified to pick a specific face.
     style: Bold
 
   # Italic font face
   italic:
-    family: Hack Nerd Font
+    family: Menlo
     # The `style` can be specified to pick a specific face.
     style: Italic
 
@@ -184,12 +185,6 @@ visual_bell:
   animation: EaseOutExpo
   duration: 0
 
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.965
-
 # Mouse bindings
 #
 # Available fields:
@@ -218,7 +213,7 @@ mouse:
   triple_click: { threshold: 300 }
 
   # If this is `true`, the cursor is temporarily hidden when typing.
-  hide_when_typing: false
+  hide_when_typing: true
 
   hints:
     # URL launcher
@@ -239,7 +234,7 @@ selection:
   # When set to `true`, selected text will be copied to both the primary and
   # the selection clipboard. Otherwise, it will only be copied to the selection
   # clipboard.
-  save_to_clipboard: false
+  save_to_clipboard: true
 
 dynamic_title: true
 cursor:
@@ -263,15 +258,15 @@ live_config_reload: true
 # You can set `shell.program` to the path of your favorite shell, e.g. `/bin/fish`.
 # Entries in `shell.args` are passed unmodified as arguments to the shell.
 shell:
-
-  program: /bin/bash
+  program: /bin/zsh
   args:
     - -l
     - -c
-    - "tmux attach || tmux new -s main"
-#  args:
-#    - --login
+    - "tmux attach || tmux"
+  args:
+    - --login
 
+working_directory: /Users/gkkirsch/dev
 # Key bindings
 #
 # Key bindings are specified as a list of objects. Each binding will specify

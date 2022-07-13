@@ -1,0 +1,27 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "elixir",
+    "erlang",
+    "javascript",
+    "javascriptreact",
+    "js",
+    "json",
+    "jsx",
+    "markdown",
+    "*"
+  ],
+  "eslint.autoFixOnSave": true,
+  "prettier.trailingComma": "none",
+  "prettier.eslintIntegration": true,
+  "codeLens.enable": true,
+  "languageserver": {
+    "elixirLS": {
+      "command": "~/.elixir-ls/release/language_server.sh",
+      "filetypes": [
+        "elixir",
+        "eelixir"
+      ]
+    }
+  }
+}
