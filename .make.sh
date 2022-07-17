@@ -20,12 +20,12 @@ echo "Install brew"
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "Installing OS Dependencies"
-#brew bundle
+brew bundle
 
 # oh my zsh
 echo "Installing Oh My Zsh"
-#rm -rf ~/.oh-my-zsh
-#sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+rm -rf ~/.oh-my-zsh
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Change permissions on zsh files
 #sudo chown -R $(whoami):staff ~/.oh-my-zsh ~/.zsh*
@@ -54,9 +54,9 @@ echo "Finished moving any existing dotfiles from ~ to $olddir"
 
 # Install Plug for managing Vim plugins
 echo "Installing Plug"
-#sudo curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-  #https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-#echo "Finished installing Plug"
+sudo curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+echo "Finished installing Plug"
 
 # Change permissions on autload file
 echo "Changing vim autoload permissions"
@@ -67,19 +67,19 @@ echo "Changing vim autoload permissions"
 
 # Install the rest of the plugins
 echo "Installing All Vim Plugins"
-#sudo vim +PlugInstall +qall
-#echo "Finished Installing All Vim Plugins"
+sudo vim +PlugInstall +qall
+echo "Finished Installing All Vim Plugins"
 
 # Make fzf history public
 echo "Changing fzf history permissions"
-#sudo chmod -R 755 ~/.local/share/fzf-history
-#echo "Finished changing fzf history permissions"
+sudo chmod -R 755 ~/.local/share/fzf-history
+echo "Finished changing fzf history permissions"
 
 # switch to zsh shell
 echo "Making zsh default shell"
-#sudo chsh -s /bin/zsh
-#echo "Finished making zsh default shell"
+sudo chsh -s /bin/zsh
+echo "Finished making zsh default shell"
 
-#rm -rf ~/.zshrc.pre*
+rm -rf ~/.zshrc.pre*
 
 clear

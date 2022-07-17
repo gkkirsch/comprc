@@ -1,4 +1,3 @@
-eval $(/opt/homebrew/bin/brew shellenv)
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -113,5 +112,3 @@ export SKIP_VAULT=true
 alias uuid="uuidgen | tr \"[:upper:]\" \"[:lower:]\" | tr -d '[:space:]' | pbcopy"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-. /opt/homebrew/opt/asdf/asdf.sh
